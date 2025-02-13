@@ -1,0 +1,683 @@
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Geo Exploraciones S.R.L. - Proyecto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        .slider {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slider img.active {
+            opacity: 1;
+        }
+
+        .navbar {
+            transition: background-color 0.5s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Navbar src="https://storage.googleapis.com/a1aa/image/t7hMKOiPnSrzI9jPMtBsSWEzPX2MPojwhmCtfYQ0DEqghREKA.jpg"-->
+    <nav class="navbar bg-white shadow-md fixed w-full z-10 top-0">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html">               
+                    <img alt="Company Logo" class="h-30 w-30 mr-2" height="100"                    
+                        src="images/GEOlogo.png"
+                        width="100" />
+                </a>    
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a class="text-red-600 border-b-2 border-red-600" href="#">Inicio</a>
+                <a class="text-gray-700 hover:text-red-600" href="#nosotros">Nosotros</a>
+                <a class="text-gray-700 hover:text-red-600" href="#servicios">Servicios</a>
+                <a class="text-gray-700 hover:text-red-600" href="#equipo">Equipo</a>
+                <a class="text-gray-700 hover:text-red-600" href="#trabajo">Trabajos</a>
+                <a class="text-gray-700 hover:text-red-600" href="#contacto">Contacto</a>
+            </div>
+            <div class="md:hidden">                
+                <button id="menu-button" class="text-gray-700 focus:outline-none" onclick="window.location.href='#contacto'">
+                    <i class="fas fa-bars fa-2x"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-md">
+            <a class="block px-4 py-2 text-red-600 border-b-2 border-red-600" href="#">Inicio</a>
+            <a class="block px-4 py-2 text-gray-700 hover:text-red-600" href="#nosotros">Nosotros</a>
+            <a class="block px-4 py-2 text-gray-700 hover:text-red-600" href="#servicios">Servicios</a>
+            <a class="block px-4 py-2 text-gray-700 hover:text-red-600" href="#equipo">Equipo</a>
+            <a class="block px-4 py-2 text-gray-700 hover:text-red-600" href="#trabajo">Trabajos</a>
+            <a class="block px-4 py-2 text-gray-700 hover:text-red-600" href="#contacto">Contacto</a>
+        </div>
+    </nav>
+    <!-- header -->
+    <section class="relative slider mt-16">
+        <img alt="Background image of people in silhouette 1" class="active" height="600"
+            src="images/slider01.jpg"
+            width="1920" />
+        <img alt="Background image of people in silhouette 2" height="600"
+            src="images/slider02.jpg"
+            width="1920" />
+        <img alt="Background image of people in silhouette 3" height="600"
+            src="images/slider03.jpg"
+            width="1920" />
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start px-8">
+            <h2 class="text-white text-lg">GEO</h2>
+            <h1 class="text-white text-4xl font-bold">Exploraciones</h1>
+            <h3 class="text-white text-2xl">INGENIERÍA S.R.L.</h3>
+            <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded" onclick="window.location.href='#contacto'">Contactar</button>
+        </div>
+    </section>
+    <!-- Intro -->
+    <section class="container mx-auto p-4">
+        <div class="mb-8 text-center">
+            <img alt="Logo of GEO Exploraciones S.R.L." class="mx-auto mb-4" height="100"
+                src="images/imago.png"
+                width="400" />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <p class="text-justify mb-4">
+                    Realizamos estudios geotécnicos y de suelos, abarcando desde la planificación y ejecución de campañas geotécnicas hasta la instalación de instrumentos para el control y monitoreo. Para cada estudio, aplicamos una variedad de métodos específicos según su aplicabilidad. El reconocimiento del terreno siempre se complementa con una serie de ensayos “In Situ”, tanto directos como indirectos, junto con los respectivos análisis de laboratorio.
+                </p>
+                <p class="text-justify mb-4">
+                    También ofrecemos servicios de evaluación y remediación de patologías en diversas obras civiles. Contamos con la experiencia y los recursos necesarios para la recolección de datos, ejecución de ensayos, monitoreo, análisis y diseño de soluciones efectivas.
+                </p>
+                <p class="text-justify mb-4">
+                    Nos enfocamos en el comportamiento tenso-deformacional del terreno, ya sea suelo o roca, ante la 
+                    implementación de cualquier tipo de infraestructura y sus condiciones específicas. Dentro de nuestras 
+                    actividades principales se incluyen estudios para fundaciones de estructuras, recalce de fundaciones, 
+                    diseño y refuerzo de túneles, análisis de estabilidad de laderas y taludes, estabilización de 
+                    excavaciones y terraplenes, diseño de muros de contención, evaluación de estabilidad de presas, 
+                    inyecciones, así como la instrumentación y monitoreo del terreno.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img alt="Reconocimiento del terreno mediante ensayos de campo y laboratorio" class="rounded mb-4"
+                        height="200"
+                        src="images/grid01.jpeg"
+                        width="300" />
+                    <p class="text-center">
+                        El reconocimiento del terreno, mediante la ejecución de ensayos de campo y laboratorio.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img alt="Proyección segura de obras mediante servicios de consultoría" class="rounded mb-4"
+                        height="200"
+                        src="images/grid02.jpeg"
+                        width="300" />
+                    <p class="text-center">
+                        La proyección segura de obras, mediante los servicios de consultoría.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img alt="Estudio del comportamiento del terreno mediante la aplicación de la Ingeniería Geológica"
+                        class="rounded mb-4" height="200"
+                        src="images/grid03.jpg"
+                        width="300" />
+                    <p class="text-center">
+                        El estudio del comportamiento del terreno, mediante la aplicación de la Ingeniería Geológica, la
+                        mecánica de suelos y/o la mecánica de rocas.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img alt="Monitoreo cuantitativo del comportamiento del terreno y las obras" class="rounded mb-4"
+                        height="200"
+                        src="images/grid04.jpg"
+                        width="300" />
+                    <p class="text-center">
+                        Monitoreo cuantitativo del comportamiento del terreno y las obras, mediante diferentes tipos de
+                        instrumentación.
+                    </p>
+                </div>
+                <div class="col-span-2">
+                    <p class="text-justify mt-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Complemento -->
+    <section class="bg-gray-800 p-8 rounded-lg flex items-center space-x-6 mx-auto  mt-8">
+        <img alt="Decorative image with abstract design" class="w-24 h-24 rounded-full" height="100"
+            src="https://storage.googleapis.com/a1aa/image/8JHdxhgHTQ44PVGnaIyj908AruBl89rraPFmGiKZoxpWcICF.jpg"
+            width="100" />
+        <div class="text-white flex items-center">
+            <i class="fas fa-quote-left text-red-500 text-4xl mr-4"></i>
+            <p class="text-lg">
+                La vinculación de la Geotecnia con la Mecánica de suelos, rocas y la mecánica de medios continuos es
+                primordial, porque la respuesta del terreno frente a las diferentes acciones, suponen casi siempre un
+                cambio del estado tensional o de las presiones de fluidos del terreno.
+            </p>
+        </div>
+    </section>
+    <!-- Nosotros -->
+    <section class="container mx-auto p-4" id="nosotros">
+        <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-1/2 p-4">
+                <h2 class="text-lg font-semibold">Nosotros</h2>
+                <h1 class="text-4xl font-bold mt-2">TAMBIÉN OFRECEMOS SERVICIOS PARA EL CONTROL DE CALIDAD</h1>
+                <p class="mt-4 text-lg">
+                    Contamos con un laboratorio central y móviles, abarcando el área de ensayos de suelos, rocas,
+                    hormigones y materiales. También, contamos con una variedad de equipos de sondeos, penetrómetros
+                    dinámicos, penetrómetro estático (CPT y CPTu), perforadoras a rotación con recuperación contínua de
+                    muestras en suelo y/o roca, perforadoras a rotopercusión con encamisado, sondeos
+                    geofísicos-geosismicos, entre otras metodologías que nos permiten entender el comportamiento del
+                    terreno. Sin embargo, nuestro mayor activo es el equipo humano con el que contamos, altamente
+                    cualificado y con una amplia experiencia profesional.
+                </p>
+            </div>
+            <div class="lg:w-1/2 p-4 flex justify-center items-center">
+                <div class="relative">
+                    <img alt="Group of people in work uniforms standing in a rocky outdoor area with mountains in the background"
+                        class="rounded-lg shadow-lg" height="400"
+                        src="images/CHARLA2.jpeg"
+                        width="600" />
+                    <div
+                        class="absolute top-0 right-0 w-16 h-16 bg-yellow-500 transform -translate-x-8 -translate-y-8 rotate-45">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-2xl font-semibold text-center">Nuestro logo</h2>
+            <div class="flex justify-center mt-4">
+                <img alt="Graph showing soil behavior" class="mx-2" height="150"
+                    src="https://storage.googleapis.com/a1aa/image/tW9deRUdnE1xXyD4uhT9dGgr4uMeUBkP44qDNUEWHJ7L2hIUA.jpg"
+                    width="200" />
+                <img alt="Logo representing soil analysis" class="mx-2" height="150"
+                    src="https://storage.googleapis.com/a1aa/image/sUUKlxOR0l4yDdN3Efj8KrfL4MGeDfiKI7aQIDNbLhunPOiQB.jpg"
+                    width="200" />
+            </div>
+            <p class="mt-4 text-center text-lg">
+                Nuestro Logo está asociado a la descripción del comportamiento de los suelos en un espacio Cambridge,
+                donde nuestro interés es centrado a análisis tenso-deformacional del terreno.
+            </p>
+            <div class="flex justify-center mt-6">
+                <button class="bg-green-600 text-white px-6 py-2 rounded-full text-lg">Contactar</button>
+            </div>
+        </div>
+    </section>
+    <!-- Metodologia -->
+    <section class="relative h-screen">
+        <img alt="Imagen de fondo de un sitio geotécnico con personas trabajando"
+            class="w-full h-full object-cover opacity-50"
+            src="https://storage.googleapis.com/a1aa/image/sll1Exw1G9LsG16zT9BVTXw72FfVvI2aawPWh9nDMCDufhIUA.jpg" />
+        <div class="absolute inset-0 flex flex-col items-center justify-start pt-8">
+            <h1 class="text-black text-2xl font-bold mb-8 text-center">METODOLOGÍA QUE APLICAMOS Y NUESTRAS
+                INTERVENCIONES INTEGRALES</h1>
+            <div class="relative w-full max-w-2xl flex items-center justify-center overflow-hidden">
+                <img alt="Diagrama de flujo de la metodología aplicada" class="max-w-full h-auto"
+                    src="https://storage.googleapis.com/a1aa/image/WudOeF1XTsypUCtefaziWaES5u0UZPpPXfvCG74zuo1FBIiQB.jpg" />
+            </div>
+        </div>
+    </section>
+    <!-- trabajo -->
+    <section id="trabajo">
+        <div class="container mx-auto p-4">
+            <div class="text-center mb-8">
+               
+                <h1 class="text-4xl font-bold text-gray-800">
+                    Experiencia
+                </h1>
+                <p class="text-gray-600 mt-4">
+                    GEO Exploraciones ofrece los servicios en la ejecución de estudios geotécnicos, más conocidos como
+                    estudios de suelos. Realizamos trabajos de campo y laboratorio, ensayos en los geomateriales
+                    obtenidos, así como la ejecución de soluciones de recalces y/o refuerzos en el terreno.
+                </p>
+                <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full" onclick="window.location.href='#contacto'">
+                    Contactar
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-container">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                    <img alt="Estudios de suelos - Equipo de perforación en campo" class="w-full h-48 object-cover"
+                        height="400"
+                        src="images/c2315.jpeg"
+                        width="600" />
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800">
+                            2023
+                        </h3>
+                        <p class="text-gray-600 mt-4 flex-grow">
+                            COIPASA
+                        </p>
+                        <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start" onclick="window.location.href='pag1.html'">
+                            Detalles
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                    <img alt="Laboratorio de suelos - Equipos de ensayo en laboratorio" class="w-full h-48 object-cover"
+                        height="400"
+                        src="images/c2412.jpg"
+                        width="600" />
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800">
+                            2024
+                        </h3>
+                        <p class="text-gray-600 mt-4 flex-grow">
+                            COIPASA
+                        </p>
+                        <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start" onclick="window.location.href='pag2.html'">
+                            Detalles
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                    <img alt="Laboratorio de rocas - Núcleos de rocas ensayados" class="w-full h-48 object-cover"
+                        height="400"
+                        src="images/hidro03.jpg"
+                        width="600" />
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800">
+                            2024
+                        </h3>
+                        <p class="text-gray-600 mt-4 flex-grow">
+                            Proyecto hidroeléctrica San José 2
+                        </p>
+                        <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start"onclick="window.location.href='pag3.html'">
+                            Detalles
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                    <img alt="Laboratorio de suelos - Equipos de ensayo en laboratorio" class="w-full h-48 object-cover"
+                        height="400"
+                        src="images/inca01.jpg"
+                        width="600" />
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-800">
+                            2024
+                        </h3>
+                        <p class="text-gray-600 mt-4 flex-grow">
+                            Estudio de Suelos Represa Miraflores Sucre - Incahusi
+                        </p>
+                        <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start" onclick="window.location.href='pag4.html'">
+                            Detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button class="px-6 py-2 bg-red-600 text-white rounded-full" id="load-more">
+                    Más servicios
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Equipo -->
+    <section class="relative bg-gray-100" id="equipo">
+        <img alt="Background image with gear patterns" class="background-image" height="540"
+            src="https://storage.googleapis.com/a1aa/image/WY1esqlJTL3cRSohkkZ5qtchemkSL44M6UP7mJesqbf8fSEhC.jpg"
+            width="1920" />
+
+        <div class="container mx-auto py-4 relative z-10 max-w-xl px-4">
+            <h1 class="text-center text-3xl font-bold mb-4">EQUIPO</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img alt="Green drilling machine on a construction site" class="w-full h-auto"
+                        src="images/equipo01.jpg" />
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img alt="Red drilling machine near a river" class="w-full h-auto"
+                        src="images/equipo02.jpg" />
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img alt="Red drilling machine on a construction site" class="w-full h-auto"
+                        src="images/equipo03.jpg" />
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img alt="Yellow drilling machine on a construction site with workers" class="w-full h-auto"
+                        src="images/equipo04.jpg" />
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img alt="Yellow and blue drilling machine on a construction site" class="w-full h-auto"
+                        src="images/equipo05.jpg" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- servicios -->
+    <section id="servicios">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-center text-3xl font-bold mb-8">SERVICIOS</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Comienza un proyecto individual -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <!-- Imagen del proyecto -->
+                    <img src="https://storage.googleapis.com/a1aa/image/6LC4RiMh2OrzJlUd3VJ4aOKPfIXWxRukyEzIrqNXdt96PREKA.jpg"
+                        alt="Construction work on Carretera El Espino Boyuibe in 2015" class="w-full h-48 object-cover">
+                    <!-- Detalles del proyecto -->
+                    <div class="p-4 text-center">
+                        <p class="font-bold">Estudio de suelos</p>
+                        <p>Estudios del terreno para edificaciones someras y de gran porte</p>
+                    </div>
+                </div>
+                <!-- Repetimos la estructura para cada proyecto -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/a1aa/image/J8evlW7HfBlQy0FcMGG8f57PojWD0MI1sswgMshORpv1fJiQB.jpg"
+                        alt="Construction work on Presa Willapa in 2016" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-bold">Laboratorio de hormigones y materiales</p>
+                        <p>Ensayos de laboratorio de hormigones, lechadas y aceros</p>
+                    </div>
+                </div>
+                <!-- Sección para más proyectos -->
+                <!-- Proyecto 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/a1aa/image/vqRvWf5KNx3BDis7bXNNtJiYQlg0UNYgr1BG9PrdMzp8PREKA.jpg"
+                        alt="Construction work on Doble Vía Villamontes Yacuiba in 2017"
+                        class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-bold">Monitoreo e Instrumentación</p>
+                        <p>Diseño de la instrumentación en sus obras civiles</p>
+                    </div>
+                </div>
+                <!-- Aquí se agregan los demás proyectos con la misma estructura de arriba -->
+            </div>
+        </div>
+    </section>
+    <!-- Contacto -->
+    <section id="contacto">
+        <div class="container mx-auto px-4 py-6">
+            <div
+                class="flex flex-col md:flex-row justify-center items-start space-y-6 md:space-y-0 md:space-x-6 max-w-4xl md:max-w-3xl mx-auto">
+
+                <div class="bg-gray-700 text-white p-6 rounded-lg w-full md:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4 text-center">Contáctanos</h2>
+                    <form>
+                        <div class="mb-4">
+                            <input class="w-full p-2 rounded border border-gray-300 text-gray-800" placeholder="Nombre"
+                                type="text" />
+                        </div>
+                        <div class="mb-4">
+                            <input class="w-full p-2 rounded border border-gray-300 text-gray-800" placeholder="Email"
+                                type="email" />
+                        </div>
+                        <div class="mb-4">
+                            <input class="w-full p-2 rounded border border-gray-300 text-gray-800" placeholder="Celular"
+                                type="text" />
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="w-full p-2 rounded border border-gray-300 text-gray-800"
+                                placeholder="Mensaje"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-2 rounded transition-all"
+                                type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="w-full md:w-1/2 text-center md:text-left flex flex-col items-center md:items-start">
+                    <img alt="Person in an office with shelves of files and a machine"
+                        class="rounded-lg w-full h-auto mb-4"
+                        src="images/1.jpeg" />
+                    <p>Estamos suscritos a revistas y asociaciones internacionales en el área de la geotecnia.</p>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-center items-start space-y-6 md:space-y-0 md:space-x-6 mt-8 max-w-4xl md:max-w-3xl mx-auto">
+
+                <div class="bg-gray-700 text-white p-6 rounded-lg w-full md:w-1/2 text-center">
+                    <h3 class="text-xl font-bold mb-2">DIRECCIÓN</h3>
+                    <p>
+                        Av. <br />
+                        Bolivia<br />
+                        email@exploraciones.com
+                    </p>
+                </div>
+
+                <div class="bg-gray-700 text-white p-6 rounded-lg w-full md:w-1/2 text-center">
+                    <h3 class="text-xl font-bold mb-2">TELÉFONOS</h3>
+                    <p>
+                        <i class="fas fa-phone-alt"></i> +591-77777777<br />
+                        <i class="fas fa-phone-alt"></i> +591-2222222
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <div class="flex flex-col items-center justify-center">
+        <footer class="bg-red-700 text-white w-full">
+            <div class="flex flex-row items-center justify-center space-x-8 py-8">
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <img alt="QR code with company logo in the center" class="w-48 h-48" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/H28dzJt1WHYfKSf5D8fU3bfxhnanNPyhvzBqaIoIx7fwtVEhC.jpg"
+                        width="200" />
+                    <button class="bg-white text-red-700 px-4 py-2 rounded-full">
+                        Descargar QR
+                    </button>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <img alt="Company logo" class="w-36 h-18" height="75"
+                        src="https://storage.googleapis.com/a1aa/image/a0hBmguOJiqLORLLphgOULIHZ2EQ8joZeLphcLEOTervtiIUA.jpg"
+                        width="150" />
+                    <div class="mt-4 text-center">
+                        <p class="font-bold">
+                            Contáctanos
+                        </p>
+                        <p>
+                            Teléfono: (591) 77777777
+                        </p>
+                        <p>
+                            Email: email@exploraciones.com
+                        </p>
+                        <p>
+                            Dirección:
+                        </p>
+                        <p>
+                            Bolivia
+                        </p>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a class="text-white" href="#">
+                            <i class="fab fa-whatsapp">
+                            </i>
+                        </a>
+                        <a class="text-white" href="#">
+                            <i class="fab fa-whatsapp">
+                            </i>
+                        </a>
+                        <a class="text-white" href="#">
+                            <i class="fab fa-linkedin">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center py-2">
+                <p class="text-sm">
+                    Copyright© 2025 | Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </div>
+    <footer class="bg-black text-white text-center py-4">
+        <div class="flex flex-col items-center">
+            <i class="fas fa-lock text-yellow-500">
+            </i>
+            <p>
+                Desarrollado y Diseñado por:
+            </p>
+            <img alt="QR Principal logo" class="w-24 h-12" height="50"
+                src="https://storage.googleapis.com/a1aa/image/lRBf3dJftZgVDUfVS7ZQilcZJfU5kmA08iu9WrGqzuMx2KiQB.jpg"
+                width="100" />
+            <p>
+                L. Martinez
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider img');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000);
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        document.getElementById('menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+    <!-- servicio -->
+    <script>
+        document.getElementById('load-more').addEventListener('click', function () {
+            const servicesContainer = document.getElementById('services-container');
+            const newServices = `
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                         <img alt="Laboratorio de hormigones y materiales" class="w-full h-48 object-cover" src="https://placehold.co/600x400" />
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-bold text-gray-800">LABORATORIO DE HORMIGONES Y MATERIALES</h3>
+                             <p class="text-gray-600 mt-4 flex-grow">
+                                 Apoyamos al CONTROL DE CALIDAD de sus obras mediante ensayos de laboratorio de hormigones, lechadas y aceros (Doblado y tracción).
+                             </p>
+                             <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start">Detalles</button>
+                         </div>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                         <img alt="Perforaciones y penetración dinámica y estática" class="w-full h-48 object-cover" src="https://placehold.co/600x400" />
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-bold text-gray-800">PERFORACIONES + PENETRACIÓN DINÁMICA Y ESTÁTICA (CPTu)</h3>
+                             <p class="text-gray-600 mt-4 flex-grow">
+                                GEO Exploraciones tiene una flota de equipos de perforación a rotación con recuperación continua de muestra y de rotopercusión. Empleamos métodos de perforación con un sistema convencional y wireline (BQ, NQ, HQ, PQ), entre otros. Contamos con conjunto de penetrómetros dinámicos, manuales, hidráulicos y autopropulsados, así como también los instalados en nuestras máquinas de perforación. Contamos con equipos de medición de energía (SPT Analyzer). Innovamos con un moderno equipos de penetración estática CPT y CPTu, autopropulsado y montado sobre nuestro camión.
+                             </p>
+                             <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start">Detalles</button>
+                         </div>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                         <img alt="Geofísica y geosísmica" class="w-full h-48 object-cover" src="https://placehold.co/600x400" />
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-bold text-gray-800">GEOFÍSICA Y GEOSÍSMICA</h3>
+                             <p class="text-gray-600 mt-4 flex-grow">
+                                GEO Exploraciones cuenta con equipos y métodos variados en el campo de la Geofísica y la sísmica, los programas de interpretación mas sofisticados y actuales son nuestra bandera. Trabajamos en la superficie del terreno con métodos de tomografías sísmicas y eléctricas, así como en el subsuelo con ensayos del tipo DOWNHOLE Y CROSSHOLE.
+                             </p>
+                             <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start">Detalles</button>
+                         </div>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                         <img alt="Micropilotes y pilotes" class="w-full h-48 object-cover" src="https://placehold.co/600x400" />
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-bold text-gray-800">MICROPILOTES Y PILOTES</h3>
+                             <p class="text-gray-600 mt-4 flex-grow">
+                                 Dentro las FUNDACIONES PROFUNDAS, ensayos las fundaciones profundas de pilotes, micropilotes y pilas, con métodos indirectos y directos, contamos con ensayos PIT (ensayos de integridad). Ensayos de Cross Hole, Carga Estática y dinámica.
+                             </p>
+                             <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start">Detalles</button>
+                         </div>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                         <img alt="Monitoreo e instrumentación" class="w-full h-48 object-cover" src="https://placehold.co/600x400" />
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-bold text-gray-800">MONITOREO E INSTRUMENTACIÓN</h3>
+                             <p class="text-gray-600 mt-4 flex-grow">
+                                 Realizamos el DISEÑO DE LA INSTRUMENTACIÓN en sus obras civiles, enfocado en la seguridad durante la construcción y operación de sus obras. Instalamos y suministramos los equipos requeridos, dándoles un soporte en sus mediciones, buscando siempre la eficiencia y economía.
+                             </p>
+                             <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start">Detalles</button>
+                         </div>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                         <img alt="Inyecciones" class="w-full h-48 object-cover" src="https://placehold.co/600x400" />
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-bold text-gray-800">INYECCIONES</h3>
+                             <p class="text-gray-600 mt-4 flex-grow">
+                                 DISEÑO Y EJECUCIÓN DE INYECCIONES por diferentes métodos: inyección con resinas, lechas de cemento, método GIN, inyecciones de morteros, control en tiempo real de las inyecciones, ejecución de inyecciones de post=grouting, micropilotes, anclajes y hormigón proyectado.
+                             </p>
+                             <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start">Detalles</button>
+                         </div>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                         <img alt="Ensayos especiales y a escala" class="w-full h-48 object-cover" src="https://placehold.co/600x400" />
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-bold text-gray-800">ENSAYOS ESPECIALES Y A ESCALA</h3>
+                             <p class="text-gray-600 mt-4 flex-grow">
+                                 Contamos con un conjunto de equipos especiales y de alta tecnología, como es el PRESIODILATÓMETRO, entre otros. Hemos desarrollado y contamos con un sistema de ejecución de ENSAYOS A GRAN ESCALA Y MEDICIÓN EN TIEMPO REAL (Corte Directo a gran escala – carga estática en pilotes – carga en galerías – hidrofractura, entre otros).
+                             </p>
+                             <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start">Detalles</button>
+                         </div>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-between">
+                         <img alt="Actividades de I+D+I GEO Exploraciones " class="w-full h-48 object-cover" src="https://placehold.co/600x400" />
+                         <div class="p-6 flex flex-col flex-grow">
+                             <h3 class="text-xl font-bold text-gray-800">ACTIVIDADES de i+D+I GEO Exploraciones </h3>
+                             <p class="text-gray-600 mt-4 flex-grow">
+                                GEO Exploraciones realiza importantes Inversiones en la innovación, buscando siempre la eficiencia en la ejecución de los estudios, apoyando a la investigación aplicada para con los servicios requeridos por nuestros clientes y buscando coadyuvar en el incremento de la productividad. Hacemos parte de nuestro grupo a estudiantes de diferentes universidades que deseen desarrollar líneas de investigación conjuntas.
+                             </p>
+                             <button class="mt-6 px-6 py-2 bg-red-600 text-white rounded-full self-start">Detalles</button>
+                         </div>
+                     </div>
+                 `;
+            servicesContainer.insertAdjacentHTML('beforeend', newServices);
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
